@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+</body>
+<script src="acm.js">
+</script>
+<script>
+    let date = new Date(),
+        year = date.getFullYear(),
+        month = date.getMonth(),
+        curreDays = Number(new Date(year, month, 0).getDate());
+    console.log(curreDays);
+
+    function chunk(arr, size) {
+        var result = [];
+        var a = [];
+        for (var i = 0; i < arr.length; i++) {
+            a.push(arr[i]);
+            if (((i + 1) % size == 0) || (i == arr.length - 1)) {
+                result.push(a);
+
+                a = [];
+            }
+        }
+        return result;
+    }
+
+    let arr = [1, 2, 3, 4, 5, 9, 7, 2, 56, 65];
+    let result = chunk(arr, 3);
+    console.log(result);
+</script>
+
+</html>
